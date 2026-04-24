@@ -65,7 +65,7 @@ Source: [Inside Airbnb](http://insideairbnb.com/get-the-data) — London, Septem
 
 ## Key findings
 
-*To be updated as analysis progresses.*
+
 
 ---
 
