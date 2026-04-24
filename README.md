@@ -42,7 +42,7 @@ An end-to-end data analysis project using real London Airbnb data from Inside Ai
 - Model evaluation
 
 ### 6. Dashboard
-- Interactive dashboard built in Tableau or Power BI
+- Interactive dashboard built in Tableau
 - Key insights from the analysis
 - Geographic map of London listings
 
@@ -99,7 +99,7 @@ airbnb-london-analysis/
 | TextBlob | Sentiment analysis |
 | Scikit-learn | Predictive modelling |
 | Folium | Geographic mapping |
-| Tableau / Power BI | Dashboard |
+| Tableau | Dashboard |
 
 ---
 
