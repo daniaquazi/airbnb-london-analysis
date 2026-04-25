@@ -2,7 +2,7 @@
 
 A data analysis project looking at Airbnb listings in London using data from Inside Airbnb (September 2025). The project goes from raw data all the way through to an interactive dashboard.
 
-👉 **[View the Tableau Dashboard](https://public.tableau.com/app/profile/dania.quazi/viz/LondonAirbnbAnalysis_17771151962090/LondonAirbnbDashboard)**
+**[View the Tableau Dashboard](https://public.tableau.com/app/profile/dania.quazi/viz/LondonAirbnbAnalysis_17771151962090/LondonAirbnbDashboard)**
 
 ---
 
