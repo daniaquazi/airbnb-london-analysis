@@ -1,75 +1,82 @@
 # London Airbnb Analysis
 
-An end-to-end data analysis project using real London Airbnb data from Inside Airbnb (September 2025). This project covers the full data pipeline from raw data through to a dashboard.
+A data analysis project looking at Airbnb listings in London using data from Inside Airbnb (September 2025). The project goes from raw data all the way through to an interactive dashboard.
+
+👉 **[View the Tableau Dashboard](https://public.tableau.com/app/profile/dania.quazi/viz/LondonAirbnbAnalysis_17771151962090/LondonAirbnbDashboard)**
 
 ---
 
-## Project outline
+## What's in this project
 
-### 1. Data wrangling (`notebooks/01_data_wrangling.ipynb`)
-- Load listings, reviews, neighbourhoods and GeoJSON data
-- Identify and handle missing values
+### 1. Data Wrangling (`notebooks/01_data_wrangling.ipynb`)
+- Load the listings, reviews and neighbourhood data
+- Fix missing values
 - Clean the price column
-- Remove invalid listings
-- Save cleaned data ready for analysis
+- Remove listings with bad or missing data
+- Save the cleaned data
 
 ### 2. Exploratory Data Analysis (`notebooks/02_EDA.ipynb`)
-- Price distribution across London
-- Average price by neighbourhood
-- Room type breakdown
-- Superhost vs regular host comparison
-- Availability trends
-- Geographic price map by neighbourhood
+- Look at how prices are spread across London
+- Find the most and least expensive neighbourhoods
+- Break down listings by room type
+- Compare superhost and regular host listings
+- Look at availability patterns
 
 ### 3. SQL Analysis (`notebooks/03_SQL.ipynb`)
-- Load cleaned data into SQLite database
-- Query average price by neighbourhood
-- Compare superhost vs regular host pricing
-- Find most reviewed listings
-- Analyse review trends over time
+- Load the data into a SQLite database
+- Write SQL queries to answer questions about price, superhosts and reviews
 
-### 4. Sentiment Analysis (`notebooks/04_sentiment.ipynb`)
-- Sample reviews for analysis
-- Run TextBlob sentiment scoring on review comments
-- Classify each review as positive, neutral or negative
-- Compare sentiment by neighbourhood
-- Find most common words in positive vs negative reviews
+### 4. Sentiment Analysis — TextBlob (`notebooks/04_sentiment_textblob.ipynb`)
+- Score guest reviews using TextBlob
+- Label each review as positive, neutral or negative
+- Look at which neighbourhoods get the best reviews
 
-### 5. Predictive Modelling (`notebooks/05_modelling.ipynb`)
-- Regression model to predict listing price
-- Classification model to identify good value listings
-- Feature importance analysis
-- Model evaluation
+### 5. Sentiment Analysis — VADER (`notebooks/05_sentiment_vader.ipynb`)
+- Score the same reviews using VADER
+- Compare results with TextBlob
+- Visualise the overall sentiment breakdown
 
-### 6. Dashboard
-- Interactive dashboard built in Tableau
-- Key insights from the analysis
-- Geographic map of London listings
+### 6. Modelling (`notebooks/06_modelling.ipynb`)
+- Build a model to predict listing price
+- Look at which factors matter most for price
+- Evaluate how well the model performs
+
+### 7. Dashboard
+- Built in Tableau Public
+- Map showing average price by London borough
+- Price distribution chart
+- Room type comparison
+- Superhost vs non-superhost comparison
+- Sentiment breakdown
 
 ---
 
-## Dataset
+## Key Findings
+
+- Central London (Westminster, Kensington & Chelsea) has the highest average prices
+- Most listings are entire homes, which are also the most expensive
+- Superhosts tend to get better reviews but charge similar prices
+- More than 85% of reviews are positive
+- Most listings cost between £50 and £150 per night
+
+---
+
+## Data
 
 Source: [Inside Airbnb](http://insideairbnb.com/get-the-data) — London, September 2025
 
 | File | Description |
 |---|---|
-| `listings.csv.gz` | Detailed listing data (79 columns) |
-| `reviews.csv.gz` | Guest reviews with comment text |
-| `neighbourhoods.csv` | London neighbourhood list |
-| `neighbourhoods.geojson` | Geographic boundaries for mapping |
+| `listings.csv.gz` | Full listing data |
+| `reviews.csv.gz` | Guest reviews |
+| `neighbourhoods.csv` | List of London neighbourhoods |
+| `neighbourhoods.geojson` | Borough boundaries for mapping |
 
-> Data files are not included in this repo — download from Inside Airbnb and place in the `data/` folder.
-
----
-
-## Key findings
-
-
+> Data files are not included in this repo. Download from Inside Airbnb and put them in the `data/` folder.
 
 ---
 
-## Project structure
+## Project Structure
 
 ```
 airbnb-london-analysis/
@@ -77,29 +84,28 @@ airbnb-london-analysis/
 │   ├── 01_data_wrangling.ipynb
 │   ├── 02_EDA.ipynb
 │   ├── 03_SQL.ipynb
-│   ├── 04_sentiment.ipynb
-│   └── 05_modelling.ipynb
+│   ├── 04_sentiment_textblob.ipynb
+│   ├── 05_sentiment_vader.ipynb
+│   └── 06_modelling.ipynb
 ├── data/                  # not tracked in git
-├── sql/                   # SQL query files
-├── dashboard/             # dashboard screenshots
 ├── .gitignore
 └── README.md
 ```
 
 ---
 
-## Tech stack
+## Tools Used
 
-| Tool | Purpose |
+| Tool | What it was used for |
 |---|---|
-| Python | Data analysis |
-| Pandas | Data wrangling |
-| Matplotlib / Seaborn | Visualisation |
-| SQLite | SQL analysis |
+| Python | Main analysis language |
+| Pandas | Data cleaning and analysis |
+| Matplotlib / Seaborn | Charts and graphs |
+| SQLite | SQL queries |
 | TextBlob | Sentiment analysis |
-| Scikit-learn | Predictive modelling |
-| Folium | Geographic mapping |
-| Tableau | Dashboard |
+| VADER | Sentiment analysis |
+| Scikit-learn | Price prediction model |
+| Tableau Public | Interactive dashboard |
 
 ---
 
